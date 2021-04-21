@@ -8,7 +8,10 @@ find_package(catkin REQUIRED COMPONENTS
     std_msgs
     geometry_msgs
     message_generation
+    tf
 )
+
+include_directories(include ${catkin_INCLUDE_DIRS} ${PCL_INCLUDE_DIRS})
 
 add_message_files(
   FILES
@@ -27,3 +30,6 @@ catkin_package(
     CATKIN_DEPENDS std_msgs geometry_msgs message_runtime 
 )
 
+add_executable(land_bridge ${PROJECT_SOURCE_DIR}/src/droneState.cpp)
+add_dependencies(land_bridge ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+target_link_libraries(land_bridge ${catkin_LIBRARIES})

@@ -1,0 +1,6 @@
+<launch>
+
+    <node name="landBridge" pkg="land_bridge" type="land_bridge" respawn="true">
+    </node>
+
+</launch>
