@@ -33,3 +33,7 @@ catkin_package(
 add_executable(land_bridge ${PROJECT_SOURCE_DIR}/src/droneState.cpp)
 add_dependencies(land_bridge ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 target_link_libraries(land_bridge ${catkin_LIBRARIES})
+
+add_executable(pubVelocity ${PROJECT_SOURCE_DIR}/src/pubVisionMsg.cpp)
+add_dependencies(pubVelocity ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+target_link_libraries(pubVelocity ${catkin_LIBRARIES})
