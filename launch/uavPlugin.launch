@@ -1,0 +1,9 @@
+<launch>
+
+    <include file="$(find mocap_optitrack)/launch/mocap.launch"/>
+
+    <include file="$(find mavros)/launch/px4.launch"/>
+
+    <node name="topicRemap" pkg="topic_tools" type="relay" args="/UAV_1/pose /mavros/vision_pose/pose"/>  
+
+</launch>
